@@ -59,7 +59,7 @@ Maybe you've had it up to here with _everything_...
 fun someDamnFunction() {
     // Some damn code
     // Damnit, it's all gone to hell!
-    throw `EVERYTHING!!!` // Throwable message: "┻━┻︵ \\(°□°)/ ︵ ┻━┻"
+    throw `EVERYTHING!!!` // Throwable message: "┻━┻︵ \(°□°)/ ︵ ┻━┻"
 }
 ```
 
