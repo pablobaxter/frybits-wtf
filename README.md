@@ -1,4 +1,5 @@
-# Frybits WTF ಠ_ಠ
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Frybits WTF ಠ_ಠ 
 Are you tired of JVMs crap? Done with handling some meaningless `NullPointerException`? Tired of throwing some other lame ass exception because somehow someone got your code in a state it never should have gotten into?
 
 Take a deep breath, and let me introduce the Frybit WTF exception library (exclusively for Kotlin)!
