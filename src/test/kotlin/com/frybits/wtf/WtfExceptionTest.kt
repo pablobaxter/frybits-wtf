@@ -82,7 +82,7 @@ class WtfExceptionTest {
 
     @Test(expected = WtfException::class)
     fun flipTheDamnUserAgain() {
-        throw `(´･_･')` .also {
+        throw `(´･_･')`.also {
             assertEquals("(╯°Д°)╯︵/(.□ . \\)", it.message)
             it.printStackTrace()
         }
