@@ -41,6 +41,19 @@ fun someDamnFunction() {
 }
 ```
 
+Can't find a table? Not a problem, let's just use our words instead!
+
+```kotlin
+fun someDamnFunction() {
+    // Some damn code
+    // Suddenly, an error appears out of nowhere!
+    throw SomeChoiceWords() // Throwable message: "FFFFFUUUUUU~~~!"
+    
+    // You can also do the following if you don't like the default message
+    // throw SomeChoiceWords("someChoiceWords") // Throwable message: "(　ﾟДﾟ)＜!! someChoiceWords"
+}
+```
+
 Sometimes, users like doing things they shouldn't. Let's handle this appropriately:
 
 ```kotlin

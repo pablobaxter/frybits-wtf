@@ -33,6 +33,13 @@ class WtfExceptionTest {
         }
     }
 
+    @Test(expected = WtfException::class)
+    fun earMuffsTest() {
+        throw SomeChoiceWords().also {
+            it.printStackTrace()
+        }
+    }
+
     @Test
     fun catchThing() {
         catchWtf {
@@ -67,6 +74,12 @@ class WtfExceptionTest {
 
         catchWtf {
             throw `(´･_･')`.also {
+                it.printStackTrace()
+            }
+        }
+
+        catchWtf {
+            throw SomeChoiceWords().also {
                 it.printStackTrace()
             }
         }

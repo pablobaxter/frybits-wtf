@@ -1,3 +1,5 @@
+@file:Suppress("unused", "NonAsciiCharacters", "ClassName")
+
 package com.frybits.wtf
 
 /**
@@ -19,24 +21,30 @@ object `┳━┳` : WtfException("(┛ಠ_ಠ)┛彡┻━┻")
 
 object TheDamnTable : WtfException("(╯°□°)╯︵ ┻━┻")
 
-class `(╯°□°)╯︵ ┻━┻`(message: String? = "FFFFFUUUUUU~~~!") : WtfException(message)
+class `(╯°□°)╯︵ ┻━┻`(message: String = "FFFFFUUUUUU~~~!") : WtfException(message)
+
+class SomeChoiceWords(message: String = "FFFFFUUUUUU~~~!") : WtfException("(　ﾟДﾟ)＜!! $message")
 
 fun catchWtf(catchBlock: () -> Unit) {
     try {
         catchBlock.invoke()
-    } catch (e: TheDamnUser) {
-        println("(´･_･`)︵ /(^.^'/)")
-    } catch (e: `(´･_･')`) {
+    } catch (e: UserException) {
         println("(´･_･`)︵ /(^.^'/)")
     } catch (e: `EVERYTHING!!!`) {
         println("┏━┓┏━┓┏━┓ ︵ /(^.^/)")
+    } catch (e: SomeChoiceWords) {
+        println("( ಠ_ಠ )")
+    } catch (e: `(╯°□°)╯︵ ┻━┻`) {
+        println("┬─┬ノ( ಠ_ಠ ノ)")
     } catch (e: WtfException) {
         println("┬─┬ノ( º _ ºノ)")
     }
 }
 
-object TheDamnUser : WtfException("(╯°Д°)╯︵/(.□ . \\)")
+sealed class UserException : WtfException("(╯°Д°)╯︵/(.□ . \\)")
 
-object `(´･_･')` : WtfException("(╯°Д°)╯︵/(.□ . \\)")
+object TheDamnUser : UserException()
+
+object `(´･_･')` : UserException()
 
 object `EVERYTHING!!!` : WtfException("┻━┻︵ \\(°□°)/ ︵ ┻━┻")
