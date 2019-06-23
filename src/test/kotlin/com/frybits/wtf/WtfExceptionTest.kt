@@ -1,5 +1,6 @@
 package com.frybits.wtf
 
+import java.lang.Exception
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
@@ -83,6 +84,12 @@ class WtfExceptionTest {
                 it.printStackTrace()
             }
         }
+
+        catchWtf {
+            throw becauseOfThisCrap(Exception("SomeException")).also {
+                it.printStackTrace()
+            }
+        }
     }
 
     @Test(expected = WtfException::class)
@@ -105,6 +112,13 @@ class WtfExceptionTest {
     fun flipEverything() {
         throw `EVERYTHING!!!`.also {
             assertEquals("┻━┻︵ \\(°□°)/ ︵ ┻━┻", it.message)
+            it.printStackTrace()
+        }
+    }
+
+    @Test(expected = WtfException::class)
+    fun flipBecauseOf() {
+        throw becauseOfThisCrap(Exception("SomeException")).also {
             it.printStackTrace()
         }
     }

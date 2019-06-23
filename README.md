@@ -77,6 +77,19 @@ fun someDamnFunction() {
 }
 ```
 
+Wait a minute? Are you really planning on using this library for real debugging? Well... ok. Let's give you a way to preserve that stack trace... just don't include this in your PR (unless you are _really_ done with other people's crap):
+
+```kotlin
+fun someDamnFunction() {
+    try {
+        // Some damn code
+    } catch (e: Exception) {
+        // What kind of crap is this?!
+        throw becauseOfThisCrap(e) // Just look at the stack trace...
+    }
+}
+```
+
 Oh no! Are you feeling some regret for your actions? Do you wish you could just catch some of these exceptions appropriately? Don't worry, I have you covered. ◕ ◡ ◕
 
 ```kotlin

@@ -7,7 +7,7 @@ package com.frybits.wtf
  * Created by Pablo Baxter (Github: pablobaxter)
  */
 
-abstract class WtfException : Exception {
+open class WtfException : Exception {
     constructor() : super()
 
     constructor(message: String?) : super(message)
@@ -36,6 +36,13 @@ fun catchWtf(catchBlock: () -> Unit) {
         println("( ಠ_ಠ )")
     } catch (e: `(╯°□°)╯︵ ┻━┻`) {
         println("┬─┬ノ( ಠ_ಠ ノ)")
+    } catch (e: `WhatTheHellIsThisCrap?`) {
+        e.cause?.let {
+            println("${it::class.java.simpleName} ノ( ಠ_ಠ ノ)")
+            it.printStackTrace()
+        } ?: run {
+            println("Quit toying with my emotions... ( ಠ_ಠ )")
+        }
     } catch (e: WtfException) {
         println("┬─┬ノ( º _ ºノ)")
     }
@@ -48,3 +55,8 @@ object TheDamnUser : UserException()
 object `(´･_･')` : UserException()
 
 object `EVERYTHING!!!` : WtfException("┻━┻︵ \\(°□°)/ ︵ ┻━┻")
+
+private class `WhatTheHellIsThisCrap?`(cause: Throwable) :
+    WtfException("${cause::class.java.simpleName} щ(ºДºщ)", cause)
+
+fun becauseOfThisCrap(cause: Throwable): WtfException = `WhatTheHellIsThisCrap?`(cause)
