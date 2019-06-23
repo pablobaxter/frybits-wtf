@@ -47,7 +47,7 @@ Can't find a table? Not a problem, let's just use our words instead!
 fun someDamnFunction() {
     // Some damn code
     // Suddenly, an error appears out of nowhere!
-    throw SomeChoiceWords() // Throwable message: "FFFFFUUUUUU~~~!"
+    throw SomeChoiceWords() // Throwable message: "(　ﾟДﾟ)＜!! FFFFFUUUUUU~~~!"
     
     // You can also do the following if you don't like the default message
     // throw SomeChoiceWords("someChoiceWords") // Throwable message: "(　ﾟДﾟ)＜!! someChoiceWords"
